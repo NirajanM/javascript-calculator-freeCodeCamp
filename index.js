@@ -212,6 +212,7 @@ function App() {
     }
     return (
         <>
+            <header>Nirajan's Calculator</header>
             <div id="MyCalculator">
                 <div id="display">{output}</div>
                 <div id="buttonsHolder">
