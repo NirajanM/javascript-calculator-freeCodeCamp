@@ -8,7 +8,7 @@ const buttons = [
         id: "divide"
     },
     {
-        name: "X",
+        name: "*",
         id: "multiply"
     },
     {
@@ -69,70 +69,75 @@ const buttons = [
     }
 ];
 function App() {
-    const [output, setOutput] = React.useState(0);
+    const [output, setOutput] = React.useState("0");
     function handleClick(clickedButton) {
         switch (clickedButton) {
             case "AC":
                 setOutput(0);
                 break;
             case "1":
-                const concatOne = output + "1";
+                const concatOne = (parseInt(output) === 0 ? "" : output) + "1";
                 setOutput(concatOne);
                 break;
             case "2":
-                const concatTwo = output + "2";
+                const concatTwo = (parseInt(output) === 0 ? "" : output) + "2";
                 setOutput(concatTwo);
                 break;
             case "3":
-                const concatThree = output + "3";
+                const concatThree = (parseInt(output) === 0 ? "" : output) + "3";
                 setOutput(concatThree);
                 break;
             case "4":
-                const concatFour = output + "4";
+                const concatFour = (parseInt(output) === 0 ? "" : output) + "4";
                 setOutput(concatFour);
                 break;
             case "5":
-                const concatFive = output + "5";
+                const concatFive = (parseInt(output) === 0 ? "" : output) + "5";
                 setOutput(concatFive);
                 break;
             case "6":
-                const concatSix = output + "6";
+                const concatSix = (parseInt(output) === 0 ? "" : output) + "6";
                 setOutput(concatSix);
                 break;
             case "7":
-                const concatSeven = output + "7";
+                const concatSeven = (parseInt(output) === 0 ? "" : output) + "7";
                 setOutput(concatSeven);
                 break;
             case "8":
-                const concatEight = output + "8";
+                const concatEight = (parseInt(output) === 0 ? "" : output) + "8";
                 setOutput(concatEight);
                 break;
             case "9":
-                const concatNine = output + "9";
+                const concatNine = (parseInt(output) === 0 ? "" : output) + "9";
                 setOutput(concatNine);
                 break;
             case "0":
-                setOutput(parseInt(output));
-                output === 0 ? setOutput(0) : setOutput(output + "0")
+                const concatZero = (parseInt(output) === 0 ? "" : output) + "0";
+                parseInt(output) === 0 ? setOutput("0") : setOutput(concatZero);
                 break;
             case "/":
-                const divide = output + "/";
+                const divide = (parseInt(output) === 0 ? "" : output) + "/";
                 setOutput(divide);
                 break;
             case "+":
-                const add = output + "+";
+                const add = (parseInt(output) === 0 ? "" : output) + "+";
                 setOutput(add);
                 break;
             case "*":
-                const multiply = output + "*";
+                const multiply = (parseInt(output) === 0 ? "" : output) + "*";
                 setOutput(multiply);
                 break;
             case "-":
-                const subtract = output + "-";
+                const subtract = (parseInt(output) === 0 ? "" : output) + "-";
                 setOutput(subtract);
                 break;
+            case ".":
+                const dot = (parseInt(output) === 0 ? "" : output) + ".";
+                setOutput(dot);
+                break;
             case "=":
-                setOutput(parseInt(output));
+                const evaluated = eval(output);
+                setOutput(evaluated);
                 break;
             default:
                 break;
