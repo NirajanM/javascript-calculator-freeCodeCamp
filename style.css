@@ -21,8 +21,8 @@ body {
 
 #buttonsHolder {
     display: grid;
-    height: 50vh;
-    width: 23vw;
+    height: 19rem;
+    width: 14rem;
     font-size: large;
     font-weight: bold;
     grid-template-columns: auto auto auto auto;
@@ -62,4 +62,26 @@ button {
     font-weight: 800;
     background-color: #E84545;
     color: white;
+}
+
+
+@media (min-width: 400px) {
+    #buttonsHolder {
+        height: 21rem;
+        width: 16rem;
+    }
+}
+
+@media (min-width: 900px) {
+    #buttonsHolder {
+        height: 23rem;
+        width: 18rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    #buttonsHolder {
+        height: 25rem;
+        width: 20rem;
+    }
 }
